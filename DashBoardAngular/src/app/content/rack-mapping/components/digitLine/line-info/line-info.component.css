@@ -1,0 +1,42 @@
+.form-field {
+  width: 150px;
+  margin-right: 10px;
+}
+.title {
+  padding-top: 1.33em;
+  padding-bottom: 1.33em;
+  padding-left: 5px;
+  padding-right: 20px;
+  font-weight: bold;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+.title2 {
+  padding-top: 1.33em;
+  padding-bottom: 1.33em;
+  padding-left: 5px;
+  padding-right: 20px;
+  font-weight: bold;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+.card {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.iconSearch {
+  margin-right: 20px;
+}
+.containerInfo {
+  flex: 1 1 auto;
+  padding-left: 80px;
+}
+.but {
+  margin-right: 10px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+.autocomplete{
+  height: 150px;
+}

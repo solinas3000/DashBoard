@@ -1,0 +1,19 @@
+<ng-template ngFor let-item [ngForOf]="data">
+  <div class="containerRack">
+    <div class="rackName">
+      {{item.name}}
+    </div>
+    <ng-template ngFor let-line [ngForOf]="item.lineList">
+      <div>
+        <div class="lineName">{{line.line.RessourceHardwareRack.BarCode}} {{line.line.RessourceHardwarePlayer.BarCode}}</div>
+        <div>
+          <ng-template ngFor let-element let-i="index" [ngForOf]="line.line.Elements">
+            <div class="elementName">
+              {{i+1}} -> {{ element.RessourceHardware.BarCode }}
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>

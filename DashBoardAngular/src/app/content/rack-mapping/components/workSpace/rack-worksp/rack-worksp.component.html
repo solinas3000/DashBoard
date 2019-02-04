@@ -1,0 +1,17 @@
+<div class="containerRack">
+    <span class="itemInfoRack" fxShow="true" fxHide.xs="true">
+        <mat-card class='container'>
+            <mat-form-field class="form-field">
+                <input matInput #RacksName name="RacksName" [(ngModel)]="rack.name" matTooltip={{rack.name}}>
+            </mat-form-field>
+            <button class='but' (click)="openSavePosition()" matTooltip="Save Name And Position" mat-raised-button color="primary">Save</button>
+              <button class='but' (click)="removeRack()" mat-raised-button color="primary">Remove</button>
+        </mat-card>
+      </span>
+      <span class="item">
+        <ng-template ngFor let-item [ngForOf]="rack.lineList" let-i="index">
+          <app-digit-line-worksp [digitLine]='item' [index]="i" [max]="rack.lineList.length" [workSpaceSelected]='workSpaceSelect'
+            (onPositionChanged)="onPositionChanged($event)" (reload)="reload($event)"></app-digit-line-worksp>
+        </ng-template>
+      </span>
+</div>

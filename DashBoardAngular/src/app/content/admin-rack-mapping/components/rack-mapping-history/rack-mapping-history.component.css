@@ -1,0 +1,67 @@
+/* Structure */
+.example-container {
+  position: relative;
+  margin: 20px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.table {
+  width: 1500px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 40px;
+}
+
+.contDetail {
+  flex-grow: 6;
+  background-color: rgb(231, 231, 231);
+  width: 600px;
+}
+
+.list {
+  flex-grow: 3;
+}
+
+/* Column Widths */
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+
+.mat-cell {
+
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 75vh;
+}
+
+.row:active {
+  background: grey
+}
+
+.row:not(:active) {
+  /* now keep red background for 1s */
+  transition: background-color 500ms ease-in
+}
+
+.mat-paginator {
+  bottom: 0px;
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.mat-row:last-child {
+  border-bottom-style: none;
+}

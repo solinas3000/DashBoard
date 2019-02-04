@@ -1,0 +1,10 @@
+<div class="container">
+    <div mat-dialog-title  class="title" >Error</div>
+    <div mat-dialog-content class="content">
+      <p>Status : {{ data._status }}</p>
+      <p>{{ data._error.message | json }}</p><br/>
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary"(click)="close()">Ok</button>
+</div>

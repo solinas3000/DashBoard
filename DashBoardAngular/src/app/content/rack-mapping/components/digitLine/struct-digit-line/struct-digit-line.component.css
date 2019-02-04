@@ -1,0 +1,28 @@
+.form-field {
+    width: 100px;
+    margin-right: 10px
+}
+.form-fieldMed {
+    width: 150px;
+    margin-right: 10px
+}
+.form-fieldLarge {
+    width: 200px;
+    margin-right: 10px
+}
+
+.but {
+    margin-top: 10px
+}
+
+.card {
+    padding-top: 0px
+}
+
+
+.example-spacer {
+flex: 1 1 auto;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}

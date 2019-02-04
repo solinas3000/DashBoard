@@ -1,0 +1,13 @@
+<div (dblclick)="gotoWorkSp()" class="container">
+  <h4 class="text">
+    {{workSpace.RessourceStudio_Name}}
+  </h4>
+  <span class="example-spacer"></span>
+  <span fxShow="true" fxHide.xs="true" class="butContainer">
+    <button class='but' (click)="gotoWorkSp()" mat-raised-button color="primary">Go to</button>
+    <button class='but' (click)="openDialogRemove()" mat-raised-button color="primary">Remove</button>
+  </span>
+  <span fxHide="true" fxShow.xs="true">
+    <button class='but' (click)="gotoWorkSp()" mat-raised-button color="primary">Go to</button>
+  </span>
+</div>

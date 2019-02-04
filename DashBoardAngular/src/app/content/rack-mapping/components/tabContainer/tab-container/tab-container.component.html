@@ -1,0 +1,20 @@
+<app-ressource-hardware-creation-open-close-snack></app-ressource-hardware-creation-open-close-snack>
+
+<mat-tab-group
+  class="tab"
+  [(selectedIndex)]="indexTab"
+  (click)="selectedTabChange($event)"
+>
+  <mat-tab label="Studio">
+      <app-struct-studio ></app-struct-studio>
+  </mat-tab>
+  <mat-tab label="Workspace">
+      <app-struct-workspace [refresh]="refresh === 1"></app-struct-workspace>
+  </mat-tab>
+  <mat-tab label="Digit Line">
+        <app-struct-digit-line></app-struct-digit-line>
+  </mat-tab>
+  <mat-tab label="Ressource Hardware">
+    <app-ressource-hardware-search-layout></app-ressource-hardware-search-layout>
+  </mat-tab>
+</mat-tab-group>

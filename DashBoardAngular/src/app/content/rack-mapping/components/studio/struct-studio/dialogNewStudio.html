@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>New Studio</h1>
+<div mat-dialog-content>
+    <mat-form-field class="form-field-search">
+        <input  matInput placeholder="Studio Name" type="text"  [(ngModel)]="studio"/>
+    </mat-form-field>
+    <mat-form-field class="form-field-search">
+        <input  matInput type="text" placeholder="Workspace Name (First)" [(ngModel)]="worksp"/>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onYesClick()" cdkFocusInitial>Ok</button>
+</div>

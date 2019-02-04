@@ -1,0 +1,14 @@
+<mat-card (dblclick)="gotoLine()" class='card'>
+    <div fxShow="true" fxHide.xs="true" class='container'>
+        <mat-icon class="iconSh">shuffle</mat-icon>
+        <input class='position' matInput type="number" min="1" #Position placeholder="Position" [value]="indexPosition+1" matTooltip={{indexPosition+1}}
+            (keyup)="onKeyPosition($event.target.value)" (click)="onKeyPosition($event.target.value)">
+        <span class='textH1'>PLAYER : {{line.RessourceHardwarePlayer.BarCode}}</span>
+        <span fxShow="true" fxHide.md="true" class='textH2'>InstalledDate : {{line.InstalledDate | date:'shortDate'}}</span>
+        <span class="spacer"></span>
+        <span>
+            <button fxShow="true" fxHide.sm="true" class='but' (click)="openRemove()" mat-raised-button color="primary">Remove</button>
+            <button class='but' (click)="gotoLine()" mat-raised-button color="primary">Goto Line</button>
+        </span>
+    </div>
+</mat-card>

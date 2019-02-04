@@ -1,0 +1,68 @@
+.form-field {
+    width: 100px;
+    margin-right: 10px
+}
+.form-fieldMed {
+    width: 150px;
+    margin-right: 10px
+}
+.form-fieldLarge {
+    width: 200px;
+    margin-right: 10px
+}
+
+.but {
+    margin-top: 10px
+}
+
+.card {
+  padding-top: 0px
+}
+.detail {
+    margin-top: 40px;
+    margin-bottom: 30px
+}
+.extraSpaceList {
+    margin: 8px;
+    margin-top: 20px
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.new {
+    margin-left: 20px
+}
+.butLine {
+    margin-left: 10px
+}
+.gotoS {
+    margin-right: 10px
+}
+.headContainer{
+    align-items: center;
+    display: flex;
+    height: 40px;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+.even {
+    background-color: #b8d1f3;
+}
+.odd {
+    background-color: #dae5f4;
+}
+.select{
+    margin-right: 10px
+}
+.containerRack {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+
+}
+.head {
+    -webkit-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.33);
+}

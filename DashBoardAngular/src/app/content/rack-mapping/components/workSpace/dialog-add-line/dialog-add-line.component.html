@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>New Line Digit</h1>
+<div mat-dialog-content>
+  <mat-form-field class="form-field-search">
+    <mat-select placeholder="From STANDBY" name="l" [(ngModel)]="selectedLineStandBy" (selectionChange)="lineStandbySelected($event)">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let l of lineStandbyList" [value]="l">
+        {{l.RessourceHardwareRack.BarCode | subStandby }} / {{l.RessourceHardwarePlayer.BarCode | subStandby }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-content>
+  <h4 mat-dialog-title>OR</h4>
+  <mat-form-field class="form-field-search">
+    <input matInput type="text" (keyup)="onKeyBarCodeRack($event.target.value)" disabled="{{disableChoose}}" placeholder="Choose Rack"
+      [matAutocomplete]="autoRack" />
+    <mat-autocomplete #autoRack="matAutocomplete" (optionSelected)="selectRackRH($event)">
+      <mat-option *ngFor="let rh of rhRackList" [value]="rh.BarCode">
+        <span>{{ rh.BarCode | subStandby }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="form-field-search">
+    <input matInput type="text" (keyup)="onKeyBarCodePlayer($event.target.value)" disabled="{{disableChoose}}" placeholder="Choose Player"
+      [matAutocomplete]="autoPlayer" />
+    <mat-autocomplete #autoPlayer="matAutocomplete" (optionSelected)="selectPlayerRH($event)">
+      <mat-option *ngFor="let rh of rhPlayerList" [value]="rh.BarCode">
+        <span>{{ rh.BarCode | subStandby }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="form-fieldMed">
+  <input class='position' matInput type="number" min="1" #Position placeholder="Position" [(ngModel)]="positionChoosen" matTooltip={{positionChoosen}}>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onYesClick()" cdkFocusInitial>Ok</button>
+</div>
+

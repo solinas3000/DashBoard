@@ -1,0 +1,63 @@
+<div *ngIf="inRM; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <div class='container'>
+        <div class="contItem">
+            <span>
+                <h4 fxShow="true" fxHide.xs="true">Studio :</h4>
+            </span>
+            <span>
+                <ng-template ngFor let-item [ngForOf]="ressourceStudioList">
+                    <div class="containerBut">
+                        <h4 class="space">
+                            {{item.RessourceStudio_Code}}
+                        </h4>
+                        <button class='but' (click)="gotoStudio(item)" mat-raised-button color="primary">
+                            Goto
+                        </button>
+                    </div>
+                </ng-template>
+            </span>
+        </div>
+        <div class="contItem">
+            <span>
+                <h4 fxShow="true" fxHide.xs="true">Workspace :</h4>
+            </span>
+            <span>
+                <ng-template ngFor let-item [ngForOf]="ressourceWorkSp">
+                    <div class="containerBut">
+                        <h4 class="space">
+                            {{item.RessourceStudio_Name}}
+                        </h4>
+                        <button (click)="gotoWorkSp(item)" class='but' mat-raised-button color="primary">
+                            Goto
+                        </button>
+                    </div>
+                </ng-template>
+            </span>
+        </div>
+        <div class="contItem">
+            <span>
+                <h4 fxShow="true" fxHide.xs="true">Digit line :</h4>
+            </span>
+            <span>
+                <ng-template ngFor let-item [ngForOf]="ressourceHardwareGotos">
+                    <div class="containerBut">
+                        <h4 class="space">
+                            {{item.RessourceHardwareRack.BarCode}} / {{item.RessourceHardwarePlayer.BarCode}}
+                        </h4>
+                        <button (click)="gotoLineDigit(item)" class='but' mat-raised-button color="primary">
+                            Goto
+                        </button>
+                    </div>
+                </ng-template>
+            </span>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #elseBlock>
+    <div class="contItem">
+        <div class="text">Not In Rack Mapping</div>
+    </div>
+</ng-template>

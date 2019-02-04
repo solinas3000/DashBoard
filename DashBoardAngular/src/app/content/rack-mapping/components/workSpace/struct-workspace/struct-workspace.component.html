@@ -1,0 +1,65 @@
+<mat-card class="headContainer">
+  <mat-form-field class="select">
+    <mat-select placeholder="Workspace" [(ngModel)]="workSpaceSelected" name="worksp" (selectionChange)="selectedWorkSp($event)">
+      <mat-option *ngFor="let worksp of worksps" [value]="worksp">
+        {{worksp.RessourceStudio_Name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="select">
+      <mat-select placeholder="Rack" [(ngModel)]="rackSelected" name="rack" (selectionChange)="selectedRack($event)">
+          <mat-option>None</mat-option>
+        <mat-option *ngFor="let rack of rackForRackSelectList" [value]="rack">
+          {{rack.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  <span class="example-spacer"></span>
+  <button *ngIf="workSpaceSelected" class='gotoS' (click)="openSideNav()" mat-raised-button color="primary">Detail</button>
+  <button *ngIf="workSpaceSelected" class='gotoS' (click)="gotoStudio()" mat-raised-button color="primary">Goto Studio</button>
+</mat-card>
+
+<mat-card class='card' *ngIf="workSpaceSelected">
+  <mat-toolbar class='head' color="primary">
+      <span fxShow="true" fxHide.xs="true" >Workspace Detail</span>
+    <span class="example-spacer"></span>
+    <button class='save' (click)="openDialogWorkSp()" mat-raised-button color="warn">Save</button>
+  </mat-toolbar>
+  <div class='detail'>
+    <mat-form-field class="form-field">
+      <input matInput #Name placeholder="Name" [(ngModel)]="workSpaceSelected.RessourceStudio_Name" matTooltip={{workSpaceSelected.RessourceStudio_Name}}>
+    </mat-form-field>
+    <mat-form-field class='form-fieldLarge'>
+        <mat-select placeholder="Studio" [(ngModel)]="workSpaceSelected.RessourceStudio_Code" name="studio">
+            <mat-option *ngFor="let studio of studios" [value]="studio">
+                {{studio}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-fieldLarge">
+      <input matInput #CreationDate [matDatepicker]="picker" placeholder="CreationDate" (ngModelChange)="workSpaceSelected.RessourceStudio_CreationDate = $event.toISOString()" [ngModel]="workSpaceSelected.RessourceStudio_CreationDate"
+        matTooltip={{workSpaceSelected.RessourceStudio_CreationDate}}>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="form-fieldLarge">
+      <input matInput [matDatepicker]="picker2" #LastModificationDate placeholder="LastModificationDate" (ngModelChange)="workSpaceSelected.RessourceStudio_CreationDate = $event.toISOString()" [ngModel]="workSpaceSelected.RessourceStudio_LastModificationDate"
+        matTooltip={{workSpaceSelected.RessourceStudio_LastModificationDate}}>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <mat-toolbar class="head" color="primary">
+      <span fxShow="true" fxHide.xs="true" >Digit Line List</span>
+      <span class="example-spacer"></span>
+      <button class='butLine' (click)="openAddLine()" mat-raised-button color="warn">Add</button>
+  </mat-toolbar>
+  <div class='extraSpaceList'>
+    <ng-template ngFor let-item [ngForOf]="rackForWorkSpList" let-i="index" let-odd="odd"; let-even="even" >
+      <div [ngClass]="{ odd: odd, even:even}">
+          <app-rack-worksp [rackForWorkSp]='item' [max]="rackForWorkSpList.length" [workSpaceSelected]='workSpaceSelected' (onPositionChanged)= "onPositionChanged($event)" (save)="saveRacks($event)" (reload)="reload($event)"></app-rack-worksp>
+      </div>
+    </ng-template>
+  </div>
+</mat-card>

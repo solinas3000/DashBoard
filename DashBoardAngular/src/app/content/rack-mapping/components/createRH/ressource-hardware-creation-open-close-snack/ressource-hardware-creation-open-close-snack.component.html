@@ -1,0 +1,21 @@
+<div class="creationH">
+
+  <div class="container" [style.opacity]="opacity" *ngIf="!toggleCreation else other">
+    <button mat-button color="primary" class="butCreate" (click)="onToogleCreation($event)">
+      Create Hardware
+    </button>
+  </div>
+
+  <ng-template #other>
+    <mat-card class="cardCreation">
+        Create Hardware
+        <button mat-button class="butClose" color="primary" (click)="onToogleCreation($event)">
+          Close
+        </button>
+      <mat-card-content>
+        <app-ressource-hardware-creation></app-ressource-hardware-creation>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+
+</div>

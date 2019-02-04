@@ -1,0 +1,49 @@
+
+.container{
+  display: flex;
+  background-color: #dae5f4;
+
+}
+
+.contItem {
+    background-color: #b8d1f3;
+    display: flex;
+    margin: 5px 5px 5px 0px;
+    flex-grow:1;
+}
+.contItem:first-child {
+  margin: 5px 5px 5px 5px;
+}
+.contItem >span:first-child {
+  margin-left: 10px;
+}
+.contItem >span:nth-child(2) {
+  flex: 1 1 auto;
+}
+.space {
+  flex: 1 1 auto;
+  font-weight: normal;
+  margin-left: 20px;
+}
+.but {
+  margin-right:10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.containerBut {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+}
+
+.text {
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 10px;
+  margin-right: 0px;
+  font-weight: bold;
+
+}

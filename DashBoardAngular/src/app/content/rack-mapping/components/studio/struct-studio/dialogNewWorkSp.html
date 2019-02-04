@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>New Workspace</h1>
+<div mat-dialog-content>
+    <mat-form-field class="form-field-search">
+        <input  matInput type="text" placeholder="WorkSp Name" [(ngModel)]="worksp" (keyup.enter)="onYesClick()"/>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onYesClick()" cdkFocusInitial>Ok</button>
+</div>

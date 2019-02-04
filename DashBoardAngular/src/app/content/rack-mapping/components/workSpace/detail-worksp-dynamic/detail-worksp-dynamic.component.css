@@ -1,0 +1,39 @@
+.containerRack {
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+.rackName{
+  background-color:  #b8d1f3;
+  flex: 1 1 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.lineName{
+  border-top: 1px solid rgb(0, 0, 0);
+  background-color:  #dae5f4;
+  flex: 1 1 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 26px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.elementName{
+  background-color:  #dae5f4;
+  flex: 1 1 auto;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 50px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+

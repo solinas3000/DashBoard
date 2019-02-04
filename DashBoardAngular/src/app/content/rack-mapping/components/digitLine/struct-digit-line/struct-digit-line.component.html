@@ -1,0 +1,11 @@
+
+  <app-line-info [resetSearch]="resetSearch | async" (setDigitLine)="setDigitLine($event)" [BarCode]="configLD.RessourceHardwareRack.BarCode" [InstalledDate]="configLD.InstalledDate"
+     [workSpace]="configLD.RessourceStudio" [Position]="configLD.Position"></app-line-info>
+<ng-container *ngIf="configLD.RessourceHardwareRack.BarCode!==''">
+    <mat-card class="card">
+      <app-rack-info (gotoRH)="gotoRH($event)" [RessourceHardwareRack]="configLD.RessourceHardwareRack"></app-rack-info>
+      <app-player-info (gotoRH)="gotoRH($event)" (removePlayer)="removePlayer($event)" (openDialogChange)="openDialogChange($event)" [RessourceHardwarePlayer]="configLD.RessourceHardwarePlayer"></app-player-info>
+      <app-elements [elements]="elementList" [IdRessourceHardwareConf]="configLD.ID_RessourceHardwareConfiguration" (openDialogChange)="openDialogChange($event)">
+      </app-elements>
+    </mat-card>
+</ng-container>

@@ -1,0 +1,83 @@
+<mat-form-field class="form-field">
+  <mat-select placeholder="Category" name="c" required (selectionChange)="catSelected($event)">
+    <mat-option *ngFor="let c of categoryList" [value]="c">
+      {{c.Category }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input (keyup.enter)="openDialog()" matInput #BarCode="ngModel" placeholder="BarCode" disabled={{!activeBarCode}} required [pattern]="this.regex" (dblclick)="dblClickDialog($event)"
+    name="BarCode" [(ngModel)]="ressourceHardwareDetail.BarCode" matTooltip={{ressourceHardwareDetail.BarCode}}>
+  <mat-error *ngIf="BarCode.errors?.pattern">
+    {{messageValidationBarCode}}
+  </mat-error>
+  <mat-error *ngIf="BarCode.errors?.required">
+    barCode is required
+  </mat-error>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Brand placeholder="Brand" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Brand" [(ngModel)]="ressourceHardwareDetail.Brand"
+    matTooltip={{ressourceHardwareDetail.Brand}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Model placeholder="Model" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Model" [(ngModel)]="ressourceHardwareDetail.Model"
+    matTooltip={{ressourceHardwareDetail.Model}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #SerialNumber placeholder="SerialNumber" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)"
+    name="SerialNumber" [(ngModel)]="ressourceHardwareDetail.SerialNumber" matTooltip={{ressourceHardwareDetail.SerialNumber}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Status placeholder="Status" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Status"
+    [(ngModel)]="ressourceHardwareDetail.Status" matTooltip={{ressourceHardwareDetail.Status}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Origin placeholder="Origin" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Origin"
+    [(ngModel)]="ressourceHardwareDetail.Origin" matTooltip={{ressourceHardwareDetail.Origin}}>
+</mat-form-field>
+
+<mat-form-field class="form-field">
+  <input matInput #Type placeholder="Type" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Type" [(ngModel)]="ressourceHardwareDetail.Type"
+    matTooltip={{ressourceHardwareDetail.Type}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #TechnicalInfo placeholder="TechnicalInfo" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)"
+    name="TechnicalInfo" [(ngModel)]="ressourceHardwareDetail.TechnicalInfo" matTooltip={{ressourceHardwareDetail.TechnicalInfo}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #DateIn [matDatepicker]="picker" placeholder="DateIn" disabled={{!BarCode.valid}} (ngModelChange)="ressourceHardwareDetail.DateIn = $event.toISOString()"
+    [ngModel]="ressourceHardwareDetail.DateIn" matTooltip={{ressourceHardwareDetail.DateIn}}>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput [matDatepicker]="picker2" #DateImport placeholder="DateImport" disabled={{!BarCode.valid}} (ngModelChange)="ressourceHardwareDetail.DateImport = $event.toISOString()"
+    [ngModel]="ressourceHardwareDetail.DateImport" matTooltip={{ressourceHardwareDetail.DateImport}}>
+  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+  <mat-datepicker #picker2></mat-datepicker>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Configuration placeholder="Configuration" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)"
+    name="Configuration" [(ngModel)]="ressourceHardwareDetail.Configuration" matTooltip={{ressourceHardwareDetail.Configuration}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #ModuleCommand placeholder="ModuleCommand" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)"
+    name="ModuleCommand" [(ngModel)]="ressourceHardwareDetail.ModuleCommand" matTooltip={{ressourceHardwareDetail.ModuleCommand}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #ModuleSpecific placeholder="ModuleSpecific" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)"
+    name="ModuleSpecific" [(ngModel)]="ressourceHardwareDetail.ModuleSpecific" matTooltip={{ressourceHardwareDetail.ModuleSpecific}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Comments placeholder="Comments" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Comments"
+    [(ngModel)]="ressourceHardwareDetail.Comments" matTooltip={{ressourceHardwareDetail.Comments}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Price placeholder="Price" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Price" [(ngModel)]="ressourceHardwareDetail.Price"
+    matTooltip={{ressourceHardwareDetail.Price}}>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput #Owner placeholder="Owner" disabled={{!BarCode.valid}} (dblclick)="dblClickDialog($event)" name="Owner" [(ngModel)]="ressourceHardwareDetail.Owner"
+    matTooltip={{ressourceHardwareDetail.Owner}}>
+</mat-form-field>
+<button class='saveB' (click)="openDialog()" disabled={{!BarCode.valid}} mat-raised-button color="primary">Save</button>

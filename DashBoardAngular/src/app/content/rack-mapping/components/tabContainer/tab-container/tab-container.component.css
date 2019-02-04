@@ -1,0 +1,17 @@
+::ng-deep .mat-tab-header {
+  position: sticky !important;
+  width: 100%;
+  top:40px;
+  z-index: 40;
+  background-color: #f1f1f1;
+}
+::ng-deep .mat-tab-label-container {
+  align-items: flex-end;
+}
+
+
+@supports (-ms-ime-align: auto){
+  ::ng-deep .mat-tab-header {
+    top: 0px;
+  }
+}

@@ -1,0 +1,34 @@
+<mat-toolbar class="head" color="primary">
+  <span>List Element</span>
+  <span class="example-spacer"></span>
+  <button *ngIf="elementList.length>0" class='save' (click)="openSaveList()" mat-raised-button color="warn">Save</button>
+</mat-toolbar>
+
+<ng-template  ngFor let-item [ngForOf]="elementList" let-i="index">
+  <div (dblclick)="gotoRHElt(item)" class="container">
+    <mat-icon class="iconSh">shuffle</mat-icon>
+    <input class='position' matInput type="number" min="1" max="{{elementList.length}}" #Position placeholder="Position" [value]="i+1"
+      matTooltip={{i+1}} (click)="onKeyPosition(i,$event.target.value-1)" (keyup)="onKeyPosition(i,$event.target.value-1)">
+    <span class="example-spacer">
+      {{item.RessourceHardware.BarCode}} / {{item.RessourceHardware.Category}}
+    </span>
+    <span fxShow="true" fxHide.xs="true" class="butContainer">
+      <button class='but' (click)="openChange(item.RessourceHardware)" mat-raised-button color="primary">Change</button>
+      <button class='but' (click)="gotoRHElt(item)" mat-raised-button color="primary">Goto RH</button>
+      <button class='but' (click)="onRemove(i)" mat-raised-button color="primary">Remove</button>
+      <button class='but' (click)="onAdd(i)" mat-raised-button color="primary">
+        Add
+        <mat-icon>vertical_align_top</mat-icon>
+      </button>
+    </span>
+  </div>
+</ng-template>
+<div class="container2">
+  <span class="example-spacer">
+
+  </span>
+  <button class='but' mat-raised-button (click)="onAdd(elementList.length)" mat-raised-button color="primary">
+    Add
+    <mat-icon>vertical_align_top</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Choose an RH</h1>
+<div mat-dialog-content>
+
+    <mat-form-field class="form-field-search">
+        <mat-select placeholder="Category" name="c" (selectionChange)="catSelected($event)">
+            <mat-option>None</mat-option>
+          <mat-option *ngFor="let c of categoryList" [value]="c">
+            {{c.Category }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field-search">
+        <input disabled="{{disableBarCode}}" matInput type="text" (keyup)="onKeyBarCode($event.target.value)" placeholder="BarCode" [matAutocomplete]="auto" (keyup.enter)="onYesClick()"/>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectRH($event)">
+                <mat-option *ngFor="let rh of rhList" [value]="rh.BarCode">
+                  <span>{{ rh.BarCode }}</span> |
+                </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onYesClick()" cdkFocusInitial>Ok</button>
+</div>

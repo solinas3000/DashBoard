@@ -1,0 +1,32 @@
+<div class="example-container">
+
+    <app-http-progress-bar [show]="showSpinner | async"></app-http-progress-bar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav class="snav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <app-menu [activeMenu]="activeMenu | async " (logout)="logout()" (toggle)="snav.close();snav2.close()"></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content (scroll)="scrollEvent($event.target)">
+      <mat-toolbar role="header" class="top-header" color="primary">
+        <span>
+          <label type="button" style="background-color:transparent;border-style:none;cursor:pointer;" (click)="snav.toggle()">
+            <i class="material-icons toolbar-link-icon" style="color:white;">menu</i>
+          </label>
+        </span>
+        <span class="title">Memnon</span>
+      </mat-toolbar>
+      <div class="bodyContent">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+    <mat-sidenav class="snav" #snav2 [(opened)]="opened" position="end" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <label type="button" class="closeNav2" (click)="snav2.close()">
+        close
+      </label>
+      <ng-template #dynamic></ng-template>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+<app-error-message></app-error-message>
+<app-info class='info'></app-info>

@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Type Text</h1>
+<div mat-dialog-content>
+  <mat-form-field class="form-field">
+    <textarea rows="5" cols="50" matInput [(ngModel)]="text"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button (click)="onYesClick()" cdkFocusInitial>Save</button>
+</div>

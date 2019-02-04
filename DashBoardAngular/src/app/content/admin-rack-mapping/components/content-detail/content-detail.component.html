@@ -1,0 +1,22 @@
+
+<span class='container' *ngIf="element">
+    <mat-toolbar color="primary">
+        <span>{{element.ActionPath}} </span>
+        <span class="example-spacer"></span>
+        <span>{{element.LastModified | date:'short'}} </span>
+        <span class="example-spacer"></span>
+        <span>{{element.Agent}}</span>
+      </mat-toolbar>
+      <div class="content">
+          <mat-card class="payload">
+              <app-payload [content]='element.PayloadIn' [type]='"INPUT"'></app-payload>
+            </mat-card>
+
+            <mat-card class="payload">
+              <app-payload [content]='element.PayloadOut' [type]='"OUTPUT"'></app-payload>
+            </mat-card>
+      </div>
+</span>
+
+
+

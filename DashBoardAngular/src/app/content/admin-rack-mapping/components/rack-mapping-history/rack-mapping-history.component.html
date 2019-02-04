@@ -1,0 +1,50 @@
+<div class="example-container mat-elevation-z8">
+
+  <div class="content">
+
+
+    <div class="list">
+      <mat-toolbar color="primary">
+        <span>Historic</span>
+      </mat-toolbar>
+      <div class="example-table-container">
+
+        <mat-table class='table' [dataSource]="data | dataSource" class="example-table">
+
+          <ng-container matColumnDef="Agent">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Agent </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.Agent}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.ActionPath}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Date">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.LastModified | date:'short'}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;" class='row'>
+          </mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+
+    <div class="contDetail">
+      <app-content-detail [row]="selectedRow"></app-content-detail>
+    </div>
+
+
+
+  </div>
+
+
+  <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex-1" (page)="getHistoryViaPaginator($event)">
+  </mat-paginator>
+
+
+</div>

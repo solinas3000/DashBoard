@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    height: 60px;
+}
+.but{
+    margin-right: 10px;
+}
+.item {
+    padding : 10px;
+    flex: 1 1 auto;
+}
+.itemInfoRack {
+    padding : 10px;
+    margin-top: 5px;
+    width: 350px;
+}
+.containerRack {
+    display: flex;
+}
+
+.form-field{
+  flex: 1 1 auto;
+  width: 45px;
+  margin-top: 1.33em;
+  margin-bottom: 1em;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

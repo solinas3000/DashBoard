@@ -1,0 +1,27 @@
+<mat-card class="headContainer">
+  <mat-form-field>
+    <mat-select placeholder="Studio" name="studio" [value]="studioSelected" (selectionChange)="selectedStudio($event.value)">
+      <mat-option *ngFor="let studio of studioList" [value]="studio">
+        {{studio}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button class='new' (click)="openDialogNewStudio()" mat-raised-button color="primary">New</button>
+  <span class="example-spacer"></span>
+  <span fxShow="true" fxHide.xs="true">
+    <button *ngIf="studioSelected !== ''" class='remove' (click)="openDialogRemove()" mat-raised-button color="primary">Remove</button>
+  </span>
+</mat-card>
+
+<mat-card class='card' *ngIf="workSpaceList.length>0">
+  <mat-toolbar class="head" color="primary">
+    <span fxShow="true" fxHide.xs="true">List Workspace</span>
+    <span class="example-spacer"></span>
+    <button class='butLine' (click)="openNewLine()" mat-raised-button color="warn">New</button>
+  </mat-toolbar>
+  <div class='extraSpaceList'>
+    <ng-template ngFor let-item [ngForOf]="workSpaceList" let-i="index">
+      <app-worksp-studio (reload)="reload($event)" [index]="index" [worksp]="item"></app-worksp-studio>
+    </ng-template>
+  </div>
+</mat-card>

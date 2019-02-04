@@ -1,0 +1,15 @@
+.title {
+  color: #D8000C;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.content {
+  color: #D8000C;
+  margin: 0px;
+}
+.container {
+  background-color: #FFD2D2;
+}
+::ng-deep .mat-dialog-title{
+  margin: 0px
+}

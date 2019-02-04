@@ -1,0 +1,142 @@
+.form-field-search {
+    width: 100px;
+    margin-right: 10px
+}
+
+.card {
+    padding-top: 0px
+}
+
+.iconSearch {
+    margin-right: 20px
+}
+
+.headerExpansion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.titleInfo {
+    width: 160px;
+    margin-left: 10px;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 1px 5px 0 rgba(0,0,0,0);
+}
+
+.textHeader {
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 5px;
+    -webkit-margin-end: 20px;
+    font-weight: bold;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.extraSpaceList {
+    margin-top: 20px
+}
+
+.contRH {
+    border: 2px solid #0d47a1;
+    margin: 8px;
+}
+
+.infoRH {
+    background-color: #b8d1f3;
+    -webkit-box-shadow: -29px 25px 211px -91px rgba(0,0,0,0.60);
+    -moz-box-shadow: -29px 25px 211px -91px rgba(0,0,0,0.60);
+    box-shadow: -29px 25px 211px -91px rgba(0,0,0,0.60);
+}
+
+.head {
+    -webkit-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.33);
+}
+
+.containerInfo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 40px;
+}
+
+.padContent{
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+
+
+/* Structure */
+.example-container {
+  position: relative;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.table {
+  width: 1500px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 40px;
+}
+
+.contDetail {
+  flex-grow: 6;
+  background-color: rgb(231, 231, 231);
+  width: 900px;
+}
+
+.list {
+  flex-grow: 3;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column Widths */
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 75vh;
+}
+
+.row:active {
+  background: grey
+}
+
+.row:not(:active) {
+  /* now keep red background for 1s */
+  transition: background-color 500ms ease-in
+}
+
+.mat-paginator {
+  bottom: 0px;
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.mat-row:last-child {
+  border-bottom-style: none;
+}

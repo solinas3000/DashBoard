@@ -1,0 +1,9 @@
+
+    <mat-toolbar class="head" color="primary">
+        <span>Player Detail</span>
+        <span class="example-spacer"></span>
+        <button class='but' (click)="removePlayer()" mat-raised-button color="warn">Remove</button>
+        <button class='but' (click)="openChange()" mat-raised-button color="warn">Change</button>
+        <button class='but' (click)="gotoRHPlayer()" mat-raised-button color="warn">Goto RH</button>
+    </mat-toolbar>
+        <h4 class="detail">Barcode : {{player.BarCode}}  /  SerialNumber : {{player.SerialNumber}}  /  Type : {{player.Type}} </h4>

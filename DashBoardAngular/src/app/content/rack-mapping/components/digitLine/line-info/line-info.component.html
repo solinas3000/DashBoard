@@ -1,0 +1,26 @@
+<mat-card class="card">
+    <span class="iconSearch">
+        <mat-icon>search</mat-icon>
+      </span>
+    <mat-form-field class="form-field">
+        <input matInput type="text" (keyup)="onKeySearchPlayer($event.target.value)" [(ngModel)]="barCodeInUse" placeholder="Player" [matAutocomplete]="autoPlayer"
+        />
+        <mat-hint *ngIf="playerChoosen" align="end">valid</mat-hint>
+        <mat-autocomplete #autoPlayer="matAutocomplete" (optionSelected)="selectPlayer($event)" class="autocomplete">
+          <mat-option *ngFor="let rh of playerList" [value]="rh.BarCode">
+            <span>{{ rh.BarCode }}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    <div class='containerInfo'>
+      <span *ngIf="rackName">
+          <span class='title'>Line : {{rackName}}</span>
+          <span class='title'>Position : {{pos}}</span>
+          <span class='title'>Installed Date : {{installDate | date:'shortDate'}}</span>
+          <span class='title2'>Workspace : {{workspSelect.RessourceStudio_Name}}</span>
+      </span>
+    </div>
+    <span>
+        <button class='but' (click)="gotoWorkSp()" mat-raised-button color="primary">Goto WorkSp</button>
+    </span>
+</mat-card>

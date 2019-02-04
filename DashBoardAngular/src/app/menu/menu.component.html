@@ -1,0 +1,10 @@
+<div *ngIf="activeMenu; else elseBlock">
+  <span class="menu">Menu</span>
+  <button class="button" (click)="toggleNav()" routerLink="/rackMapping">rack mapping</button>
+  <button class="button" (click)="toggleNav()" routerLink="/adminRackMapping">admin rack mapping</button>
+  <button class="button" (click)="logout();" routerLink="/log">logout</button>
+</div>
+<ng-template #elseBlock>
+  <span class="menu">Menu</span>
+  <button class="button" (click)="toggleNav()" routerLink="/log">login</button>
+</ng-template>

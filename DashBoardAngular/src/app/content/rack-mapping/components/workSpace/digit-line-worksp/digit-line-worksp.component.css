@@ -1,0 +1,52 @@
+.form-field {
+  width: 100px;
+  margin-right: 10px;
+}
+.form-fieldMed {
+  width: 150px;
+  margin-right: 10px;
+}
+.form-fieldLarge {
+  width: 200px;
+  margin-right: 10px;
+}
+.but {
+  margin-left: 10px;
+}
+.card {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.container {
+  margin-right: 10px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.position {
+  margin: 10px;
+  width: 40px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.textH1 {
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 5px;
+  margin-right: 20px;
+  font-weight: bold;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  width: 200px;
+}
+.textH2 {
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 5px;
+  margin-right: 20px;
+  font-weight: bold;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

@@ -1,0 +1,103 @@
+<mat-card>
+  <div class='containerInfo'>
+    <span class="iconSearch">
+      <mat-icon>search</mat-icon>
+    </span>
+    <span>
+      <mat-form-field class="form-field-search">
+        <input matInput type="text" (keyup)="onKeyBarCode($event.target.value)" placeholder="BarCode" [ngModel]="searchTextValue.BarCodeS"
+        />
+        <button mat-button *ngIf="searchTextValue.BarCodeS" matSuffix mat-icon-button aria-label="Clear" (click)="searchTextValue.BarCodeS='';onClose()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="form-field-search">
+        <input matInput type="text" (keyup)="onKeyModel($event.target.value)" placeholder="Model" [ngModel]="searchTextValue.ModelS"
+        />
+        <button mat-button *ngIf="searchTextValue.ModelS" matSuffix mat-icon-button aria-label="Clear" (click)="searchTextValue.ModelS='';onClose()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="form-field-search">
+        <input matInput type="text" (keyup)="onKeySerialNumber($event.target.value)" placeholder="SerialNumber" [ngModel]="searchTextValue.SerialNumberS"
+        />
+        <button mat-button *ngIf="searchTextValue.SerialNumberS" matSuffix mat-icon-button aria-label="Clear" (click)="searchTextValue.SerialNumberS='';onClose()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="form-field-search">
+        <mat-select placeholder="Category" name="c" [(ngModel)]="categorySelected" (selectionChange)="catSelected($event)">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let c of categoryList" [value]="c">
+            {{c.Category }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-field-search">
+        <input matInput type="text" (keyup)="onKeyBrand($event.target.value)" placeholder="Brand" [ngModel]="searchTextValue.BrandS"
+        />
+        <button mat-button *ngIf="searchTextValue.BrandS" matSuffix mat-icon-button aria-label="Clear" (click)="searchTextValue.BrandS='';onClose()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="form-field-search">
+        <input matInput type="text" (keyup)="onKeyType($event.target.value)" placeholder="Type" [ngModel]="searchTextValue.TypeS"
+        />
+        <button mat-button *ngIf="searchTextValue.TypeS" matSuffix mat-icon-button aria-label="Clear" (click)="searchTextValue.TypeS='';onClose()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </span>
+  </div>
+</mat-card>
+
+<div class="example-container mat-elevation-z8" *ngIf="serverDataRessourceHardware._items.length > 0">
+
+  <div class="content">
+
+
+    <div class="list">
+
+      <div class="example-table-container">
+          <mat-toolbar color="primary">
+              <span>Ressource List</span>
+            </mat-toolbar>
+        <mat-table class='table' [dataSource]="serverDataRessourceHardware._items | dataSource" class="example-table">
+
+          <ng-container matColumnDef="BarCode">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> BarCode </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.BarCode}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Category">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.Category}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row (click)="selectRow(row)" *matRowDef="let row; columns: displayedColumns;" class='row'>
+          </mat-row>
+        </mat-table>
+      </div>
+    </div>
+
+
+    <div class="contDetail" >
+      <app-content-rh *ngIf="selectedRow" [row]="selectedRow"></app-content-rh>
+    </div>
+
+
+
+  </div>
+
+
+  <mat-paginator #paginator [length]="serverDataRessourceHardware._meta.total" [pageSize]="serverDataRessourceHardware._meta.max_results"
+    [pageSizeOptions]="[5, 10, 25, 100]" [pageIndex]="serverDataRessourceHardware._meta.page-1" (page)="pageEvent = getRessourceHardwareViaPaginator($event)">
+
+  </mat-paginator>
+
+
+</div>

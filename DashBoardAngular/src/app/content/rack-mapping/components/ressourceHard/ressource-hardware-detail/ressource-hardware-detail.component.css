@@ -1,0 +1,29 @@
+.form-field {
+    width: 100px;
+    margin-right: 10px
+}
+
+.form-fieldMed {
+    width: 150px;
+    margin-right: 10px
+}
+
+.form-fieldLarge {
+    width: 200px;
+    margin-right: 10px
+}
+.space{
+    flex: 1 1 auto;
+}
+.content {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.headCont {
+    display: flex;
+    flex-direction: row;
+    background-color: #b8d1f3;
+    height: 55px;
+    font: 500 22px/32px Roboto,"Helvetica Neue",sans-serif;
+}

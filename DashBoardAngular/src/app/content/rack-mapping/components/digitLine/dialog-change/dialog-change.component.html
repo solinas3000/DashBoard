@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Choose a {{typeRH}}</h1>
+<div mat-dialog-content>
+  <div class="info">
+    For your information :
+    <mat-form-field class="form-field-search">
+      <input matInput type="text" (keyup)="onKeyBarCodeRhInUse($event.target.value)" placeholder="In Use" [matAutocomplete]="autoInUse"
+      />
+      <mat-hint *ngIf="rhChoosenInUse" align="end">valid</mat-hint>
+      <mat-autocomplete #autoInUse="matAutocomplete" (optionSelected)="selectRhInUse($event)">
+        <mat-option *ngFor="let rh of rhInUseList" [value]="rh.BarCode">
+          <span>{{ rh.BarCode }}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <button (click)="gotoRh()" class='but' mat-raised-button color="primary" disabled={{!rhChoosenInUse}}>
+      Goto
+    </button>
+  </div>
+  <div class="search">
+      <mat-form-field class="form-field-search">
+          <input matInput type="text" (keyup)="onKeyBarCodeRhNotInUse($event.target.value)" placeholder="Not In Use" [matAutocomplete]="autoNotInUse"
+          />
+          <mat-hint *ngIf="rhChoosenNotInUse" align="end">valid</mat-hint>
+          <mat-autocomplete #autoNotInUse="matAutocomplete" (optionSelected)="selectRhNotInUse($event)">
+            <mat-option *ngFor="let rh of rhNotInUseList" [value]="rh.BarCode">
+              <span>{{ rh.BarCode }}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+  </div>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onYesClick()" cdkFocusInitial>Ok</button>
+</div>
