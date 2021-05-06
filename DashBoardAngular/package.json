@@ -30,7 +30,7 @@
     "deep_pick": "0.0.9",
     "moment": "^2.22.1",
     "rxjs": "^5.5.6",
-    "underscore": "^1.9.0",
+    "underscore": "^1.12.1",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
